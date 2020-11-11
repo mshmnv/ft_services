@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+        containers:
+          - name: nginx
+            image: nginx
+            imagePullPolicy: Never
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+  annotations:
+    metallb.universe.tf/allow-shared-ip: wp
+spec:
+  externalTrafficPolicy: Cluster
+  type: LoadBalancer
+  loadBalancerIP: 192.168.99.101
+  selector:
+    app: nginx
+  ports:
+  - name: http
+    port: 80
+  - name: https
+    port: 443
+  - name: ssh
+    port: 22
