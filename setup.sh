@@ -1,8 +1,14 @@
 #!/bin/bash
 
+ # for school mac
+#  export MINIKUBE_HOME=/Users/lbagg/goinfre/.minikube
+#  export PATH=$MINIKUBE_HOME/bin:$PATH
+#  export KUBECONFIG=$MINIKUBE_HOME/.kube/config
+#  export KUBE_EDITOR="code -w"
+
 # создание kubernetes cluster
-minikube start # --vm-driver=virtualbox --cpus=2 --disk-size="10000mb" --memory="2000mb"
-# eval $(minikube docker-env) # по совету со stack overflow
+minikube start  --vm-driver=virtualbox --disk-size="5000mb"
+eval $(minikube docker-env)
 
 minikube addons enable metallb
 minikube addons enable metrics-server

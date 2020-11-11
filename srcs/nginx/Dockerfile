@@ -24,4 +24,4 @@ RUN openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes -out /etc/ssl/ce
 
 EXPOSE 80 443
 
-CMD bash start_nginx.sh
+CMD start_nginx.sh
