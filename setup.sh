@@ -1,13 +1,7 @@
 #!/bin/bash
 
- # for school mac
-#  export MINIKUBE_HOME=/Users/lbagg/goinfre/.minikube
-#  export PATH=$MINIKUBE_HOME/bin:$PATH
-#  export KUBECONFIG=$MINIKUBE_HOME/.kube/config
-#  export KUBE_EDITOR="code -w"
-
 # создание kubernetes cluster
-minikube start  --vm-driver=virtualbox --disk-size="5000mb"
+minikube start  --driver=virtualbox --disk-size=5000MB
 eval $(minikube docker-env)
 
 minikube addons enable metallb

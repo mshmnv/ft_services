@@ -21,6 +21,10 @@ spec:
           - name: nginx
             image: nginx
             imagePullPolicy: Never
+            ports:
+            - containerPort: 80
+            - containerPort: 22
+            - containerPort: 443
 
 ---
 apiVersion: v1
