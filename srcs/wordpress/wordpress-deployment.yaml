@@ -18,7 +18,7 @@ spec:
         app: wordpress
     spec:
         containers:
-          - name: wordpress
+          - name: wordpress-container
             image: wordpress
             imagePullPolicy: Never
             ports:
