@@ -33,7 +33,7 @@ metadata:
   labels:
     app: wordpress
   annotations:
-    metallb.universe.tf/allow-shared-ip: wp
+    metallb.universe.tf/allow-shared-ip: config
 spec:
   externalTrafficPolicy: Cluster
   type: LoadBalancer

@@ -1,0 +1,4 @@
+CREATE DATABASE data_base;
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL ON data_base.* TO 'user'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'base' );
+define( 'DB_NAME', 'data_base' );
 
 /** MySQL database username */
 define( 'DB_USER', 'user' );
@@ -36,6 +36,11 @@ define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+define( 'WP_HOME', 'http://192.168.99.101:5050');		# external ip
+
+define( 'WP_SITEURL', 'http://192.168.99.101:5050');	# external ip
+
 
 /**#@+
  * Authentication Unique Keys and Salts.

@@ -8,9 +8,12 @@ RUN apk add wget
 RUN apk add nginx
 RUN apk add php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-json php7-session
 
-RUN adduser -D -g 'user' user
-RUN chown -R user:user /var/lib/nginx
+RUN adduser -D -g 'www' www
+RUN chown -R www:www /var/lib/nginx
+RUN mkdir /www
+RUN chown -R www:www /www
 RUN mkdir -p /run/nginx
+
 RUN openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes -out /etc/ssl/certs/localhost.crt \
 -keyout /etc/ssl/certs/localhost.key -subj "/C=RU/ST=MSK/L=MSK/O=21school/CN=ft_services"
 
@@ -20,7 +23,9 @@ RUN tar zxvf phpMyAdmin-5.0.2-all-languages.tar.gz
 RUN rm phpMyAdmin-5.0.2-all-languages.tar.gz
 RUN mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 
-COPY phpmyadmin-config.inc.php .
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY supervisor.conf /etc/supervisord.conf
+COPY phpmyadmin-config.inc.php phpmyadmin/
 COPY start_phpmyadmin.sh .
 RUN chmod +x start_phpmyadmin.sh
 

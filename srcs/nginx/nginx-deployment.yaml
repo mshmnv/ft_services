@@ -7,11 +7,6 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -33,7 +28,7 @@ metadata:
   labels:
     app: nginx
   annotations:
-    metallb.universe.tf/allow-shared-ip: wp
+    metallb.universe.tf/allow-shared-ip: config
 spec:
   externalTrafficPolicy: Cluster
   type: LoadBalancer
