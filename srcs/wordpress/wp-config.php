@@ -29,7 +29,7 @@ define( 'DB_USER', 'user' );
 define( 'DB_PASSWORD', 'password' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'mysql' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -88,7 +88,7 @@ define( 'WP_DEBUG', false );
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+	define( 'ABSPATH', dirname(__FILE__) . '/' );
 }
 
 /** Sets up WordPress vars and included files. */

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # создание kubernetes cluster
-minikube start  --driver=virtualbox --disk-size=5000MB
+minikube start  
+# --driver=virtualbox --disk-size=5000MB
 eval $(minikube docker-env)
 
 minikube addons enable metallb
