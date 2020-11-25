@@ -14,6 +14,7 @@ RUN mkdir /www
 RUN chown -R www:www /www
 RUN mkdir -p /run/nginx
 
+WORKDIR /www
 RUN openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes -out /etc/ssl/certs/localhost.crt \
 -keyout /etc/ssl/certs/localhost.key -subj "/C=RU/ST=MSK/L=MSK/O=21school/CN=ft_services"
 
@@ -25,9 +26,10 @@ RUN mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY supervisor.conf /etc/supervisord.conf
-COPY phpmyadmin-config.inc.php phpmyadmin/
+COPY config.inc.php phpmyadmin/config.inc.php
 COPY start_phpmyadmin.sh .
-RUN chmod +x start_phpmyadmin.sh
+# ?
+RUN chmod 644 phpmyadmin/config.inc.php
 
 EXPOSE 5000
 

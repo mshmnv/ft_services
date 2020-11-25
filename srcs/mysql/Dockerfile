@@ -6,8 +6,8 @@ RUN apk add mariadb-client
 RUN apk add openrc
 
 COPY my.cnf /etc/
-COPY database .
-COPY wordpress.sql .
+COPY create_db .
+COPY data_base.sql .
 COPY start_mysql.sh .
 
 VOLUME ["/var/lib/mysql"]

@@ -34,7 +34,7 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   type: LoadBalancer
-  loadBalancerIP: 192.168.99.101
+  loadBalancerIP: 192.168.99.220
   selector:
     app: phpmyadmin
   ports:
