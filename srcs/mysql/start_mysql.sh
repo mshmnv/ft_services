@@ -1,13 +1,3 @@
-# Wait that mysql was up
-# until mysql
-# do
-# 	echo "NO_UP"
-# done
-# echo "CREATE DATABASE data_base;" | mysql -u root
-# echo "CREATE USER 'user'@'%' IDENTIFIED BY 'password';" | mysql -u root
-# echo "GRANT ALL ON data_base.* TO 'user'@'%' WITH GRANT OPTION;" | mysql -u root
-# echo "FLUSH PRIVILEGES;" | mysql -u root
-
 rc default
 /etc/init.d/mariadb setup
 rc-service mariadb start
