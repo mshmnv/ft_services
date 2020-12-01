@@ -41,7 +41,7 @@ stringData:
   INFLUXDB_DB: telegraf
   INFLUXDB_USER: admin
   INFLUXDB_USER_PASSWORD: password
-  INFLUXDB_URL: http://cip-influxdb:8086
+  INFLUXDB_URL: http://influxdb:8086
 ---
 apiVersion: apps/v1
 kind: Deployment
