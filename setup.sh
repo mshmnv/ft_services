@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # создание kubernetes cluster
-minikube start --driver=virtualbox --disk-size=5000MB
-# minikube start --driver=hyperkit --disk-size=5000MB
+# minikube start --driver=virtualbox --disk-size=5000MB
+minikube start --driver=hyperkit --disk-size=5000MB
 
 eval $(minikube docker-env)
 
@@ -19,7 +19,7 @@ docker build -t wordpress srcs/wordpress
 docker build -t ftps srcs/ftps
 docker build -t telegraf srcs/telegraf	# agent for collecting and reporting metrics and events (for influxdb)
 docker build -t influxdb srcs/influxdb	# purpose built time series db - база для хранения временных рядов (for grafana)
-docker build -t grafana srcs/grafana		# interface for the influxdata platform (dashboard, access control)
+docker build -t grafana srcs/grafana	# interface for the influxdata platform (dashboard, access control)
 
 kubectl apply -f srcs/nginx/nginx-deployment.yaml
 kubectl apply -f srcs/mysql/mysql-deployment.yaml
