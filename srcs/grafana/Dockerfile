@@ -1,13 +1,11 @@
 FROM alpine:latest
 
 RUN apk update
-# RUN apk add openssl
 RUN apk add grafana --repository=http://dl-3.alpinelinux.org/alpine/edge/testing/
 
-
-# COPY influxdb.yaml /usr/share/grafana/conf/provisioning/datasources/influxdb.yaml
-# COPY dashboards.yaml /usr/share/grafana/conf/provisioning/dashboards/dashboards.yaml
-# COPY /dashboards/* /var/lib/grafana/dashboards/
+COPY datasource.yaml /usr/share/grafana/conf/provisioning/datasources/
+COPY dashboards.yaml /usr/share/grafana/conf/provisioning/dashboards/
+COPY /dashboards/* /var/lib/grafana/dashboards/
 
 EXPOSE 3000
 

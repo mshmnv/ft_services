@@ -34,5 +34,5 @@ spec:
   selector:
     app: telegraf
   ports:
-    - port: 8125
-      targetPort: 8125
+  - port: 8125
+    targetPort: 8125
