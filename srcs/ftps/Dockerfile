@@ -14,6 +14,6 @@ RUN openssl req -newkey rsa:2048 -x509 -days 365 -nodes -out /etc/vsftpd.crt \
 COPY vsftpd.conf /etc/vsftpd/
 COPY start_ftps.sh .
 
-EXPOSE 21
+EXPOSE 21 20 21000
 
 CMD sh start_ftps.sh
