@@ -6,7 +6,7 @@
 * MySQL
 * Wordpress (IP:5050)
 * phpMyAdmin (IP:5000)
-* Nginx (http://IP:80 -> https://IP:442)
+* Nginx (http IP:80 -> https IP:443)
 * FTPS (IP:21)
 * Grafana (IP:3000)
 * InfluxDB
