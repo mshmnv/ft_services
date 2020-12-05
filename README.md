@@ -11,3 +11,6 @@
 * Grafana (IP:3000)
 * InfluxDB
 * Telegraf
+
+
+![Schema](/img/schema.png)
