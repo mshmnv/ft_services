@@ -15,9 +15,6 @@ RUN chown -R www:www /var/lib/nginx
 RUN chown -R www:www /www
 RUN mkdir -p /run/nginx
 
-# RUN openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes -out /etc/ssl/certs/localhost.crt \
-# -keyout /etc/ssl/certs/localhost.key -subj "/C=RU/ST=MSK/L=MSK/O=21school/CN=ft_services"
-
 RUN wget http://wordpress.org/latest.tar.gz
 RUN tar -xvf latest.tar.gz
 RUN rm latest.tar.gz

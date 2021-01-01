@@ -1,4 +1,3 @@
-# starting the SSH deamon and nginx
 rc default
 rc-service sshd start
 ssh-keygen -A
